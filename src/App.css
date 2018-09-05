@@ -30,7 +30,7 @@ body {
 }
 .container {
   width: 100%;
-  padding: 20px;
+  padding: 20px 16px;
   margin: 0 auto;
 }
 
@@ -39,44 +39,21 @@ body {
 }
 
 h2 {
-  font-family: 'SF Mono', Menlo, Consolas, monospace;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: hsl(0, 0%, 35%);
+  color: #3377FF;
   text-align: left;
-  margin-bottom: 8px;
-}
-
-li a .favicon {
-  padding: 2px;
-  background: #fff;
-  border-radius: 3px;
-  margin-right: 8px;
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.favicon img {
-  width: 16px;
-  height: auto;
+  margin: 0 0 8px 8px;
 }
 
 li a {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  border: 1px solid #E6E8ED;
+  letter-spacing: -.3px;
+  display: block;
   font-size: 13px;
   color: #4C5059;
-  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  padding: 8px;
+  padding: 8px 10px;
   background: #fff;
   transition: color 100ms ease-in-out, background 100ms ease-in-out, background 100ms ease-in-out;
   border-radius: 3px;
@@ -88,8 +65,7 @@ li a {
 
 li a:hover {
   color: #fff;
-  background: #3377FF; 
-  border: 1px solid #3377FF;
+  background: #3377FF;
 }
 
 a.madeby {
