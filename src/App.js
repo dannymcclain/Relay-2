@@ -7,7 +7,7 @@ class App extends Component {
 constructor(props) {
   super(props);
   this.state = {  
-    tabs: {}
+    deviceTabs: []
   };
 }
 
@@ -18,7 +18,7 @@ componentDidMount() {
 createTabList = (data) => {
   const tabsByDevice = this.getTabsByDevice(data);
   this.setState ({
-    tabs: tabsByDevice
+    deviceTabs: tabsByDevice
   }, console.log(tabsByDevice))
 }
 
@@ -39,16 +39,21 @@ getTabsFromSessions = (sessions) => {
   }, []);
 }
 
-// getSessions = () => {
-//   chrome.sessions.getDevices({}, (chromeSessions) => {
-//     console.log(chromeSessions);
-//   });
-// }
+renderTabListItem = (tab) => {
+  return <li><a href={tab.url}>{tab.title}</a></li>
+}
 
   render() {
     return (
-      <div>Hi
-        {/* <button onClick={this.getSessions}>Log Sessions</button> */}
+      <div className="container">
+        {this.state.deviceTabs.map( (deviceTab)=> (
+        <div>
+          <h1>{deviceTab.name}</h1>
+          <ul>
+            {deviceTab.tabs.map(this.renderTabListItem)}
+          </ul>
+        </div>
+        ))}
       </div>
     );
   }
