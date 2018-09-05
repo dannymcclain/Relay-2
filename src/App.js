@@ -39,12 +39,8 @@ getTabsFromSessions = (sessions) => {
   }, []);
 }
 
-openTab = (tab) => {
-  chrome.tabs.create({url: tab.url});
-}
-
 renderTabListItem = (tab) => {
-  return <li><a href={tab.url} onClick={this.openTab(tab)}>{tab.title}</a></li>
+  return <li><a href={tab.url} onClick={() => {chrome.tabs.create({url: tab.url})}}>{tab.title}</a></li>
 }
 
   render() {
