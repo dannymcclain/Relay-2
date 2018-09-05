@@ -40,15 +40,26 @@ getTabsFromSessions = (sessions) => {
 }
 
 renderTabListItem = (tab) => {
-  return <li><a href={tab.url}>{tab.title}</a></li>
+  return (
+    <li>
+      { (tab.favIconUrl !== '')
+        ?
+        <img src={tab.favIconUrl} alt="" width="100%" height="100%" />
+        :
+        <svg width="10" height="14" xmlns="http://www.w3.org/2000/svg"><g stroke="#5A5A5A" fill="none" fill-rule="evenodd"><path d="M.5.5h5l4 4v9h-9z"/><path d="M5.5.5v4h4"/></g></svg>
+      }
+      
+      <a href={tab.url}>{tab.title}</a>
+    </li>
+  )
 }
 
   render() {
     return (
       <div className="container">
         {this.state.deviceTabs.map( (deviceTab)=> (
-        <div>
-          <h1>{deviceTab.name}</h1>
+        <div className="link-list">
+          <h2>{deviceTab.name}</h2>
           <ul>
             {deviceTab.tabs.map(this.renderTabListItem)}
           </ul>
