@@ -4,8 +4,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 360px;
-  width:480px;
+  /* height: 360px; */
+  width: 300px;
 }
 
 *, *:before, *:after {
@@ -22,11 +22,6 @@ ol, ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* STYLES */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -37,11 +32,10 @@ body {
   width: 100%;
   padding: 20px;
   margin: 0 auto;
-  }
+}
 
-.link-list {
-  background: #fff;
-  padding: 12px;
+.link-list:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -49,24 +43,42 @@ h2 {
   font-size: 12px;
   font-weight: 600;
   color: hsl(0, 0%, 35%);
-  padding: 10px;
   text-align: left;
+  margin-bottom: 8px;
 }
 
-ul {
-  list-style: none;
+li a .favicon {
+  padding: 2px;
+  background: #fff;
+  border-radius: 3px;
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favicon img {
+  width: 16px;
+  height: auto;
 }
 
 li a {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #E6E8ED;
+  font-size: 13px;
+  color: #4C5059;
+  letter-spacing: 0;
   font-weight: 500;
   text-decoration: none;
-  font-size: 14px;
-  color: #000;
-  letter-spacing: -0.3px;
-  display: block;
-  padding: 10px;
-  background: rgba(0,0,0,100%);
-  transition: color 100ms ease-in-out, background 100ms ease-in-out;
+  padding: 8px;
+  background: #fff;
+  transition: color 100ms ease-in-out, background 100ms ease-in-out, background 100ms ease-in-out;
   border-radius: 3px;
   line-height: 1.4;
   white-space: nowrap;
@@ -75,7 +87,9 @@ li a {
 }
 
 li a:hover {
-  color: #3377FF;
+  color: #fff;
+  background: #3377FF; 
+  border: 1px solid #3377FF;
 }
 
 a.madeby {
