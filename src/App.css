@@ -1,28 +1,105 @@
-.App {
+/* RESET */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 200px;
+  width: 300px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* STYLES */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: #fff;
   text-align: center;
 }
+.container {
+  width: 96%;
+  max-width: 480px;
+  margin: 60px auto 0;
+  }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+ul {
+  list-style: none;
+  background: #FFFFFF;
+  border-radius: 7px;
+  padding: 14px;
+  margin-bottom: 40px;
+  text-align: left;
+  box-shadow: 0 6px 30px 0 #E6E8ED;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+h1 {
+  margin: 0 0 40px 0;
+  font-size: 3em;
 }
 
-.App-title {
-  font-size: 1.5em;
+h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #45474D;
+  letter-spacing: -0.4px;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
-.App-intro {
-  font-size: large;
+li a {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  /* color: #45474D; */
+  color: #3377FF;
+  letter-spacing: -0.3px;
+  display: block;
+  padding: 10px;
+  background: rgba(255,255,255,0);
+  transform: scale(1);
+  transition: color 100ms ease-in-out, background 100ms ease-in-out, transform 200ms cubic-bezier(.09,.87,.76,1);
+  border-radius: 3px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+li a:hover {
+  background: #3377FF;
+  color: #fff;
+  transform: scale(1.02);
+
+}
+
+a.madeby {
+  font-weight: 500;
+  font-size: 14px;
+  color: #A8ABB3;
+  letter-spacing: -0.2px;
+  text-align: center;
+  margin: 40px 0;
+  text-decoration: none;
+  transition: color 100ms ease-in-out;
+}
+
+a.madeby:hover {
+  color: #3377FF;
 }

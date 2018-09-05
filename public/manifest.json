@@ -1,15 +1,23 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
+  "name": "Relay",
+  "manifest_version": 2,
+  "description": "Show tabs from your synced devices",
+  "version": "0.0.1",
+  "icons": {
+    "16": "./icon-16.png",
+    "32": "./icon-32.png",
+    "48": "./icon-48.png",
+    "96": "./icon-96.png",
+    "128": "./icon-128.png",
+    "256": "./icon-256.png"
+  },
+  "permissions": [
+    "sessions",
+    "tabs"
   ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "./icon-256.png"
+},
+  "author": "Danny McClain <dannyxmcclain@gmail.com> (https://twitter.com/dannymcclain)"
 }

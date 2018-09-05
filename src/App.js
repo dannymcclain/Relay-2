@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+/* eslint-disable no-undef */
+
+constructor(props) {
+  super(props);
+  this.state = {url: 'hey'};
+
+  this.getTabUrl = this.getTabUrl.bind(this);
+}
+
+getTabUrl = () => {
+  chrome.tabs.query({ active: true, lastFocusedWindow: true},
+  (openTabs) => {
+    const activeTab = openTabs[0];
+    this.setState({url: activeTab.url});
+  });
+}
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <button onClick={this.getTabUrl}>Show Tab Url</button>
+        <p>{this.state.url}</p>
       </div>
     );
   }
