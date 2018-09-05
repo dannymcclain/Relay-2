@@ -6,23 +6,49 @@ class App extends Component {
 
 constructor(props) {
   super(props);
-  this.state = {url: 'hey'};
-
-  this.getTabUrl = this.getTabUrl.bind(this);
+  this.state = {  
+    tabs: {}
+  };
 }
 
-getTabUrl = () => {
-  chrome.tabs.query({ active: true, lastFocusedWindow: true},
-  (openTabs) => {
-    const activeTab = openTabs[0];
-    this.setState({url: activeTab.url});
+componentDidMount() {
+  chrome.sessions.getDevices({}, this.createTabList);
+}
+
+createTabList = (data) => {
+  const tabsByDevice = this.getTabsByDevice(data);
+  this.setState ({
+    tabs: tabsByDevice
+  }, console.log(tabsByDevice))
+}
+
+getTabsByDevice = (sessions) => {
+  return sessions.map((device) => {
+    const sessions = device.sessions;
+    const tabs = this.getTabsFromSessions(sessions);
+    return {
+      name: device.deviceName,
+      tabs,
+    };
   });
 }
+
+getTabsFromSessions = (sessions) => {
+  return sessions.reduce((acc, curr) => {
+    return [...acc, ...curr.window.tabs];
+  }, []);
+}
+
+// getSessions = () => {
+//   chrome.sessions.getDevices({}, (chromeSessions) => {
+//     console.log(chromeSessions);
+//   });
+// }
+
   render() {
     return (
-      <div>
-        <button onClick={this.getTabUrl}>Show Tab Url</button>
-        <p>{this.state.url}</p>
+      <div>Hi
+        {/* <button onClick={this.getSessions}>Log Sessions</button> */}
       </div>
     );
   }
