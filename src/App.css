@@ -68,16 +68,16 @@ li a:hover {
   background: #3377FF;
 }
 
-a.madeby {
-  /* font-family: 'SF Mono', Menlo, Consolas, monospace; */
-  font-size: 12px;
-  font-weight: 500;
-  color: hsl(0, 0%, 35%);
-  margin: 40px 0;
-  text-decoration: none;
-  transition: color 100ms ease-in-out;
+li a:hover span.tab-url {
+  color:#fff;
 }
 
-a.madeby:hover {
-  color: #3377FF;
+span.tab-url {
+  font-size: 10px;
+  color: #A8ABB3;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 100ms ease-in-out;
 }
