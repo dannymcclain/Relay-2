@@ -11,13 +11,10 @@
     "128": "./icon-128.png",
     "256": "./icon-256.png"
   },
-  "permissions": [
-    "sessions",
-    "tabs"
-  ],
+  "permissions": ["sessions", "tabs"],
   "browser_action": {
     "default_popup": "index.html",
     "default_icon": "./icon-256.png"
-},
+  },
   "author": "Danny McClain <dannyxmcclain@gmail.com> (https://twitter.com/dannymcclain)"
 }
