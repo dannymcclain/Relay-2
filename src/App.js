@@ -42,15 +42,19 @@ class App extends Component {
     }, []);
   };
 
+  handleClick(tab, event) {
+    event.preventDefault();
+    if (event.metaKey) {
+      chrome.tabs.create({ url: tab.url, active: false });
+      return;
+    }
+    chrome.tabs.create({ url: tab.url });
+  }
+
   renderTabListItem = tab => {
     return (
       <li>
-        <a
-          href={tab.url}
-          onClick={() => {
-            chrome.tabs.create({ url: tab.url });
-          }}
-        >
+        <a href={tab.url} onClick={event => this.handleClick(tab, event)}>
           {tab.title}
           <span className="tab-url">{tab.url}</span>
         </a>
